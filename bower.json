@@ -1,0 +1,27 @@
+{
+  "name": "angular-flat-ui",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "xiaoming"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "flat-ui",
+    "ichecked"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.5.0",
+    "jquery": "^2.2.1"
+  }
+}

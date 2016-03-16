@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
+	<title>slider</title>
+	<link rel="stylesheet" href="../dist/slider/css/flat-slider.min.css">
+</head>
+<body ng-app="an-slider">
+	<div ng-controller="ansliderController as vm">
+		<div an-slider ng-model="vm.sliderValue" an-max="60" an-min="10" an-step="5" an-segments="false"></div>
+		<div an-slider ng-model="vm.sliderValue" an-max="60" an-min="10" an-segments="true"></div>
+		{{vm.sliderValue}}
+		<div an-slider ng-model="vm.slideSingle" an-orientation="vertical" style="height:200px;"></div>
+		{{vm.slideSingle}}
+	</div>	
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="../bower_components/angular/angular.min.js"></script>
+	<script src="../src/slider/slider.jquery.js"></script>
+	<script src="../src/slider/an-slider.js"></script>
+	<script type="text/javascript">
+		(function(){
+			angular.module('an-slider')
+				.controller('ansliderController', function(){
+					var vm = this;
+					vm.sliderValue = [10,40];
+					vm.slideSingle = 30;
+					vm.start = function(){
+						console.log(1111);
+					}
+				});
+		})();		
+	</script>
+</body>
+</html>

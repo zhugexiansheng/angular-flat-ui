@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
+	<title>all-form</title>
+	<link rel="stylesheet" type="text/css" href="../dist/all-form/an-form.min.css">
+</head>
+<body ng-app="myApp">
+	<div data-ng-controller="testController as vm">
+		<input type="checkbox" an-radiocheck ng-model="vm.checkbox">
+		<input type="radio" an-radiocheck ng-model="vm.radiocheck">
+		<input type="checkbox" an-switch ng-model="vm.switch">
+		<div an-slider ng-model="vm.slider" an-max="40"></div>
+	</div>
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="../bower_components/angular/angular.min.js"></script>
+	<script src="../dist/all-form/js/an-form.min.js"></script>
+	<script type="text/javascript">
+		(function(){
+			angular.module('myApp', ['an-form'])
+				.controller('testController', function(){
+					var vm = this;
+					vm.checkbox = true;
+					vm.radiocheck = true;
+					vm.switch = true;
+					vm.slider = 30;
+				});
+		})();
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
+	<title>switch demo</title>
+	<link rel="stylesheet" href="../dist/switch/css/flat-switch.css">
+</head>
+<body ng-app="an-switch">
+	<div data-ng-controller="test as vm">
+		<input type="checkbox" an-switch ng-model="vm.checkbox" on-text="是"/>
+		{{vm.checkbox}}
+	</div>
+
+	<script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="../dist/switch/js/an-switch.js"></script>
+	<script type="text/javascript">
+		(function(){
+			angular.module('an-switch')
+				.controller('test', function(){
+					var vm = this;
+
+					vm.checkbox = true;
+				});
+		})();
+	</script>
+</body>
+</html>

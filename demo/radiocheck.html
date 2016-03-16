@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
+	<title>radiocheck</title>
+	<link rel="stylesheet" type="text/css" href="../dist/radiocheck/an-radiocheck.min.js">
+</head>
+<body ng-app="an-radiocheck">
+	<div data-ng-controller="an-radiocheck as vm">
+		<input type="checkbox" an-radiocheck ng-model="vm.ischeck">
+		<input type="radio" an-radiocheck ng-model="vm.ischeck">
+		<input type="checkbox" ng-model="vm.ischeck">
+		{{vm.ischeck}}
+	</div>	
+
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="../bower_components/angular/angular.min.js"></script>
+	<script src="../dist/radiocheck/an-radiocheck.js"></script>
+
+	<script type="text/javascript">
+		(function(){
+			angular.module("an-radiocheck")
+				.controller('an-radiocheck', function(){
+					var vm = this;
+					this.ischeck = true;
+				});
+		})();
+	</script>
+</body>
+</html>
