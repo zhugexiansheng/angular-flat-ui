@@ -83,7 +83,7 @@ gulp.task('anconcat', function(){
 		.pipe(gulp.dest('dist/all-form/js/'));
 });
 
-gulp.task('dev:css', ['less:switch', 'less:slider','mincss:radiocheck']);
+gulp.task('dev:css', sequence(['less:switch', 'less:slider','mincss:radiocheck'], 'all:css'));
 
 gulp.task('dev:js', ['minjs:switch', 'minjs:slider', 'minjs:radiocheck']);
 
