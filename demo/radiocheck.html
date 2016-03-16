@@ -4,26 +4,34 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
 	<title>radiocheck</title>
-	<link rel="stylesheet" type="text/css" href="../dist/radiocheck/an-radiocheck.min.js">
+	<link rel="stylesheet" type="text/css" href="../dist/radiocheck/_all.min.css">
 </head>
 <body ng-app="an-radiocheck">
 	<div data-ng-controller="an-radiocheck as vm">
-		<input type="checkbox" an-radiocheck ng-model="vm.ischeck">
-		<input type="radio" an-radiocheck ng-model="vm.ischeck">
-		<input type="checkbox" ng-model="vm.ischeck">
+		<input type="radio" ng-model="vm.ischeck" an-radiocheck name="gender" value="male">
+		<input type="radio" ng-model="vm.ischeck" an-radiocheck name="gender" value="female">
+		<input type="checkbox" name="interest" an-radiocheck ng-change="vm.test()" ng-model="vm.checkbox" value="1111">
+		<input type="checkbox" name="interest" value="2222" an-radiocheck>
+		<input type="checkbox" name="interest" value="3333" an-radiocheck>
 		{{vm.ischeck}}
+		{{vm.checkbox}}
 	</div>	
 
 	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="../bower_components/angular/angular.min.js"></script>
-	<script src="../dist/radiocheck/an-radiocheck.js"></script>
+	<script src="../src/radiocheck/icheck.js"></script>
+	<script src="../src/radiocheck/an-radiocheck.js"></script>
 
 	<script type="text/javascript">
 		(function(){
 			angular.module("an-radiocheck")
 				.controller('an-radiocheck', function(){
 					var vm = this;
-					this.ischeck = true;
+					vm.ischeck = "";
+					vm.checkbox = [];
+					vm.test = function(){
+						console.log(1111);
+					}
 				});
 		})();
 	</script>
